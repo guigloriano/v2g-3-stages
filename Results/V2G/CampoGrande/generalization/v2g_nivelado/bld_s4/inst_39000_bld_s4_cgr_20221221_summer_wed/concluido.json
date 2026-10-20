@@ -1,0 +1,12 @@
+{
+ "tecnica": "v2g",
+ "instancia": "inst_39000_bld_s4_cgr_20221221_summer_wed",
+ "status": "ok",
+ "wall_s": 12.16,
+ "maxrss_mb": 339.0,
+ "erro": "",
+ "inicio": "2026-10-04T14:15:53",
+ "jobs": 4,
+ "commit": "c6722f2b+alterado",
+ "selecao": "selecao_dias.select_days()"
+}

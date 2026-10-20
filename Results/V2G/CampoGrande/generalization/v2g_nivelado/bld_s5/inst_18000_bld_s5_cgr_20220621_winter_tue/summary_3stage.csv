@@ -1,0 +1,5 @@
+Estágio,Pico_Pconv_kW,Vale_Pconv_kW,Var_Carga_kW2,SoC_medio_pct,EVs_acima_min,EVs_carga_completa
+Inicial,72719.52,37126.56,117198227.268,54.598,10799,4
+Após S1 (V2G),56550.72,37126.56,42844302.33,46.199,10797,0
+Após S2 (mín),56550.72,37126.56,42844302.33,46.199,10797,0
+Após S3 (máx),65945.0,65938.08,4.174,91.216,18000,18000

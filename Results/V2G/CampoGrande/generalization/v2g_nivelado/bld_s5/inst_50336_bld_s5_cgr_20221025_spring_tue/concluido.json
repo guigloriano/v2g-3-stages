@@ -1,0 +1,12 @@
+{
+ "tecnica": "v2g",
+ "instancia": "inst_50336_bld_s5_cgr_20221025_spring_tue",
+ "status": "ok",
+ "wall_s": 13.05,
+ "maxrss_mb": 363.4,
+ "erro": "",
+ "inicio": "2026-10-04T13:50:30",
+ "jobs": 4,
+ "commit": "c6722f2b+alterado",
+ "selecao": "selecao_dias.select_days()"
+}

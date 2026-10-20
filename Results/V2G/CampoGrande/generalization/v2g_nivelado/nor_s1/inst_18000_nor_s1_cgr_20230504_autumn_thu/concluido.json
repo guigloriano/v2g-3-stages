@@ -1,0 +1,12 @@
+{
+ "tecnica": "v2g",
+ "instancia": "inst_18000_nor_s1_cgr_20230504_autumn_thu",
+ "status": "ok",
+ "wall_s": 8.74,
+ "maxrss_mb": 350.5,
+ "erro": "",
+ "inicio": "2026-10-08T20:47:51",
+ "jobs": 4,
+ "commit": "63125cb75+alterado",
+ "selecao": "selecao_dias.select_days()"
+}

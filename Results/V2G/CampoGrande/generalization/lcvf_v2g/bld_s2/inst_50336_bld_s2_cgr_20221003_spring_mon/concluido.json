@@ -1,0 +1,12 @@
+{
+ "tecnica": "lcvf",
+ "instancia": "inst_50336_bld_s2_cgr_20221003_spring_mon",
+ "status": "ok",
+ "wall_s": 20.43,
+ "maxrss_mb": 409.4,
+ "erro": "",
+ "inicio": "2026-10-07T14:54:01",
+ "jobs": 4,
+ "commit": "c6722f2b+alterado",
+ "selecao": "selecao_dias.select_days()"
+}

@@ -1,0 +1,126 @@
+comparacao,frota,N,n,x_menor,x_maior,mediana_dif,W,p,efeito_rb,p_holm
+pico final: V2G × LCVF,todas,todos,768,670,97,-3714.5,16171.5,0.0,-0.890187,0.0
+energia líquida: V2G × LCVF,todas,todos,768,601,55,-43.16753,2671.5,0.0,-0.975206,0.0
+EVs abaixo de 90%: V2G × LCVF,todas,todos,768,0,547,0.198718,0.0,0.0,1.0,0.0
+pico final: V2G × Exato,todas,todos,768,689,79,-3725.0,15994.0,0.0,-0.891675,0.0
+pico final: LCVF × Exato,todas,todos,768,563,42,-14.0,22249.0,0.0,-0.757259,0.0
+pico final: V2G × LCVF,bld_s1,3000,32,32,0,-3318.0,0.0,0.0,-1.0,0.0
+energia líquida: V2G × LCVF,bld_s1,3000,32,31,1,-5.83345,1.0,1e-06,-0.996212,4.5e-05
+EVs abaixo de 90%: V2G × LCVF,bld_s1,3000,32,0,31,0.1,0.0,1e-06,1.0,4.5e-05
+pico final: V2G × Exato,bld_s1,3000,32,32,0,-3332.0,0.0,0.0,-1.0,0.0
+pico final: LCVF × Exato,bld_s1,3000,32,32,0,-14.0,0.0,1e-06,-1.0,3.4e-05
+pico final: V2G × LCVF,bld_s1,9000,32,31,1,-4514.12,5.0,0.0,-0.981061,0.0
+energia líquida: V2G × LCVF,bld_s1,9000,32,32,0,-63.00126,0.0,1e-06,-1.0,4.5e-05
+EVs abaixo de 90%: V2G × LCVF,bld_s1,9000,32,0,32,0.488889,0.0,1e-06,1.0,4.5e-05
+pico final: V2G × Exato,bld_s1,9000,32,31,1,-4542.12,5.0,0.0,-0.981061,0.0
+pico final: LCVF × Exato,bld_s1,9000,32,32,0,-14.92,0.0,1e-06,-1.0,4.5e-05
+pico final: V2G × LCVF,bld_s1,18000,32,27,5,-3612.12,19.0,0.0,-0.92803,9e-06
+energia líquida: V2G × LCVF,bld_s1,18000,32,32,0,-386.17439,0.0,1e-06,-1.0,4.5e-05
+EVs abaixo de 90%: V2G × LCVF,bld_s1,18000,32,0,32,1.088889,0.0,1e-06,1.0,4.5e-05
+pico final: V2G × Exato,bld_s1,18000,32,27,5,-3632.34,19.0,0.0,-0.92803,9e-06
+pico final: LCVF × Exato,bld_s1,18000,32,32,0,-21.62,0.0,1e-06,-1.0,4.5e-05
+pico final: V2G × LCVF,bld_s1,39000,32,7,25,1738.56,114.0,0.004131,0.568182,0.045442
+energia líquida: V2G × LCVF,bld_s1,39000,32,32,0,-3938.162095,0.0,0.0,-1.0,0.0
+EVs abaixo de 90%: V2G × LCVF,bld_s1,39000,32,0,32,2.982051,0.0,1e-06,1.0,4.5e-05
+pico final: V2G × Exato,bld_s1,39000,32,7,25,1696.92,115.0,0.004412,0.564394,0.045442
+pico final: LCVF × Exato,bld_s1,39000,32,32,0,-39.86,0.0,1e-06,-1.0,4.5e-05
+pico final: V2G × LCVF,bld_s1,50336,32,6,26,1525.64,91.0,0.000773,0.655303,0.01314
+energia líquida: V2G × LCVF,bld_s1,50336,32,32,0,-21821.76976,0.0,0.0,-1.0,0.0
+EVs abaixo de 90%: V2G × LCVF,bld_s1,50336,32,0,32,9.370033,0.0,0.0,1.0,0.0
+pico final: V2G × Exato,bld_s1,50336,32,6,26,1475.14,91.0,0.000773,0.655303,0.01314
+pico final: LCVF × Exato,bld_s1,50336,32,32,0,-50.5,0.0,1e-06,-1.0,4.5e-05
+pico final: V2G × LCVF,bld_s2,3000,32,32,0,-4150.64,0.0,0.0,-1.0,0.0
+energia líquida: V2G × LCVF,bld_s2,3000,32,31,0,-4.083415,0.0,1e-06,-1.0,4.5e-05
+EVs abaixo de 90%: V2G × LCVF,bld_s2,3000,32,0,31,0.1,0.0,1e-06,1.0,4.5e-05
+pico final: V2G × Exato,bld_s2,3000,32,32,0,-4157.64,0.0,0.0,-1.0,0.0
+pico final: LCVF × Exato,bld_s2,3000,32,27,0,-7.0,0.0,2e-06,-1.0,5.8e-05
+pico final: V2G × LCVF,bld_s2,9000,32,32,0,-7158.5,0.0,0.0,-1.0,0.0
+energia líquida: V2G × LCVF,bld_s2,9000,32,32,0,-37.33408,0.0,1e-06,-1.0,4.5e-05
+EVs abaixo de 90%: V2G × LCVF,bld_s2,9000,32,0,32,0.305556,0.0,1e-06,1.0,4.5e-05
+pico final: V2G × Exato,bld_s2,9000,32,32,0,-7165.5,0.0,0.0,-1.0,0.0
+pico final: LCVF × Exato,bld_s2,9000,32,31,1,-9.92,1.0,1e-06,-0.996212,4.5e-05
+pico final: V2G × LCVF,bld_s2,18000,32,31,1,-4221.08,1.0,0.0,-0.996212,0.0
+energia líquida: V2G × LCVF,bld_s2,18000,32,32,0,-367.50735,0.0,0.0,-1.0,0.0
+EVs abaixo de 90%: V2G × LCVF,bld_s2,18000,32,0,32,0.622222,0.0,1e-06,1.0,4.5e-05
+pico final: V2G × Exato,bld_s2,18000,32,32,0,-4236.64,0.0,0.0,-1.0,0.0
+pico final: LCVF × Exato,bld_s2,18000,32,32,0,-15.8,0.0,1e-06,-1.0,4.5e-05
+pico final: V2G × LCVF,bld_s2,39000,32,26,6,-1091.06,64.0,6.7e-05,-0.757576,0.001337
+energia líquida: V2G × LCVF,bld_s2,39000,32,32,0,-1090.85515,0.0,0.0,-1.0,0.0
+EVs abaixo de 90%: V2G × LCVF,bld_s2,39000,32,0,32,0.74359,0.0,0.0,1.0,0.0
+pico final: V2G × Exato,bld_s2,39000,32,26,6,-1118.9,63.0,6e-05,-0.761364,0.001266
+pico final: LCVF × Exato,bld_s2,39000,32,30,2,-32.94,26.0,0.0,-0.901515,2.9e-05
+pico final: V2G × LCVF,bld_s2,50336,32,16,16,-53.58,208.0,0.303787,-0.212121,1.0
+energia líquida: V2G × LCVF,bld_s2,50336,32,32,0,-1355.69378,0.0,0.0,-1.0,0.0
+EVs abaixo de 90%: V2G × LCVF,bld_s2,50336,32,0,32,0.705261,0.0,1e-06,1.0,4.5e-05
+pico final: V2G × Exato,bld_s2,50336,32,16,16,-96.7,204.0,0.269906,-0.227273,1.0
+pico final: LCVF × Exato,bld_s2,50336,32,32,0,-43.3,0.0,0.0,-1.0,0.0
+pico final: V2G × LCVF,bld_s4,3000,32,32,0,-4339.18,0.0,0.0,-1.0,0.0
+energia líquida: V2G × LCVF,bld_s4,3000,32,5,7,0.0,32.5,0.774414,0.166667,1.0
+EVs abaixo de 90%: V2G × LCVF,bld_s4,3000,32,0,0,0.0,,,,
+pico final: V2G × Exato,bld_s4,3000,32,32,0,-4339.18,0.0,0.0,-1.0,0.0
+pico final: LCVF × Exato,bld_s4,3000,32,2,0,0.0,,,,
+pico final: V2G × LCVF,bld_s4,9000,32,32,0,-9197.1,0.0,0.0,-1.0,0.0
+energia líquida: V2G × LCVF,bld_s4,9000,32,17,4,-0.0,20.0,0.000858,-0.82684,0.01314
+EVs abaixo de 90%: V2G × LCVF,bld_s4,9000,32,0,13,0.0,0.0,0.000244,1.0,0.004395
+pico final: V2G × Exato,bld_s4,9000,32,32,0,-9204.52,0.0,0.0,-1.0,0.0
+pico final: LCVF × Exato,bld_s4,9000,32,24,0,-7.0,0.0,1.7e-05,-1.0,0.000369
+pico final: V2G × LCVF,bld_s4,18000,32,32,0,-2807.58,0.0,0.0,-1.0,0.0
+energia líquida: V2G × LCVF,bld_s4,18000,32,28,1,-83.418335,1.0,3e-06,-0.995402,7.4e-05
+EVs abaixo de 90%: V2G × LCVF,bld_s4,18000,32,0,28,0.138889,0.0,4e-06,1.0,9.4e-05
+pico final: V2G × Exato,bld_s4,18000,32,32,0,-2816.84,0.0,0.0,-1.0,0.0
+pico final: LCVF × Exato,bld_s4,18000,32,29,3,-10.8,93.0,0.001385,-0.647727,0.018011
+pico final: V2G × LCVF,bld_s4,39000,32,32,0,-882.94,0.0,0.0,-1.0,0.0
+energia líquida: V2G × LCVF,bld_s4,39000,32,32,0,-462.592585,0.0,0.0,-1.0,0.0
+EVs abaixo de 90%: V2G × LCVF,bld_s4,39000,32,0,32,0.241026,0.0,1e-06,1.0,4.5e-05
+pico final: V2G × Exato,bld_s4,39000,32,32,0,-833.3,0.0,0.0,-1.0,0.0
+pico final: LCVF × Exato,bld_s4,39000,32,16,16,1.34,169.0,0.075661,0.359848,0.605286
+pico final: V2G × LCVF,bld_s4,50336,32,32,0,-1187.66,0.0,0.0,-1.0,0.0
+energia líquida: V2G × LCVF,bld_s4,50336,32,32,0,-698.84731,0.0,1e-06,-1.0,4.5e-05
+EVs abaixo de 90%: V2G × LCVF,bld_s4,50336,32,0,32,0.283098,0.0,1e-06,1.0,4.5e-05
+pico final: V2G × Exato,bld_s4,50336,32,32,0,-1020.54,0.0,0.0,-1.0,0.0
+pico final: LCVF × Exato,bld_s4,50336,32,13,19,107.54,91.0,0.000773,0.655303,0.01314
+pico final: V2G × LCVF,bld_s5,3000,32,32,0,-6524.66,0.0,0.0,-1.0,0.0
+energia líquida: V2G × LCVF,bld_s5,3000,32,7,12,0.0,58.5,0.12552,0.384211,0.878637
+EVs abaixo de 90%: V2G × LCVF,bld_s5,3000,32,0,0,0.0,,,,
+pico final: V2G × Exato,bld_s5,3000,32,32,0,-6524.66,0.0,0.0,-1.0,0.0
+pico final: LCVF × Exato,bld_s5,3000,32,0,0,0.0,,,,
+pico final: V2G × LCVF,bld_s5,9000,32,32,0,-13574.24,0.0,0.0,-1.0,0.0
+energia líquida: V2G × LCVF,bld_s5,9000,32,7,8,0.0,56.0,0.796253,0.066667,1.0
+EVs abaixo de 90%: V2G × LCVF,bld_s5,9000,32,0,0,0.0,,,,
+pico final: V2G × Exato,bld_s5,9000,32,32,0,-13574.24,0.0,0.0,-1.0,0.0
+pico final: LCVF × Exato,bld_s5,9000,32,0,0,0.0,,,,
+pico final: V2G × LCVF,bld_s5,18000,32,31,1,-16334.12,2.0,0.0,-0.992424,0.0
+energia líquida: V2G × LCVF,bld_s5,18000,32,9,8,0.0,68.5,0.684977,-0.104575,1.0
+EVs abaixo de 90%: V2G × LCVF,bld_s5,18000,32,0,0,0.0,,,,
+pico final: V2G × Exato,bld_s5,18000,32,32,0,-16334.12,0.0,0.0,-1.0,0.0
+pico final: LCVF × Exato,bld_s5,18000,32,2,0,0.0,,,,
+pico final: V2G × LCVF,bld_s5,39000,32,27,4,-640.16,13.0,0.0,-0.947581,5e-06
+energia líquida: V2G × LCVF,bld_s5,39000,32,12,3,0.0,16.5,0.01022,-0.725,0.091983
+EVs abaixo de 90%: V2G × LCVF,bld_s5,39000,32,0,0,0.0,,,,
+pico final: V2G × Exato,bld_s5,39000,32,32,0,-640.16,0.0,1e-06,-1.0,4.5e-05
+pico final: LCVF × Exato,bld_s5,39000,32,14,0,0.0,0.0,0.000122,-1.0,0.002319
+pico final: V2G × LCVF,bld_s5,50336,32,20,12,-3.34,106.5,0.003227,-0.596591,0.038728
+energia líquida: V2G × LCVF,bld_s5,50336,32,9,10,0.0,91.0,0.868798,-0.042105,1.0
+EVs abaixo de 90%: V2G × LCVF,bld_s5,50336,32,0,0,0.0,,,,
+pico final: V2G × Exato,bld_s5,50336,32,32,0,-17.92,0.0,1e-06,-1.0,4.5e-05
+pico final: LCVF × Exato,bld_s5,50336,32,26,0,-14.26,0.0,8e-06,-1.0,0.000199
+pico final: V2G × LCVF,nor_s1,3000,32,32,0,-3143.58,0.0,0.0,-1.0,0.0
+energia líquida: V2G × LCVF,nor_s1,3000,32,29,1,-2.33338,1.0,2e-06,-0.995699,5.4e-05
+EVs abaixo de 90%: V2G × LCVF,nor_s1,3000,32,0,29,0.066667,0.0,2e-06,1.0,5.8e-05
+pico final: V2G × Exato,nor_s1,3000,32,32,0,-3150.58,0.0,0.0,-1.0,0.0
+pico final: LCVF × Exato,nor_s1,3000,32,30,0,-8.18,0.0,1e-06,-1.0,4.5e-05
+pico final: V2G × LCVF,nor_s1,9000,32,32,0,-7531.48,0.0,0.0,-1.0,0.0
+energia líquida: V2G × LCVF,nor_s1,9000,32,32,0,-21.00042,0.0,1e-06,-1.0,4.5e-05
+EVs abaixo de 90%: V2G × LCVF,nor_s1,9000,32,0,31,0.155556,0.0,1e-06,1.0,4.5e-05
+pico final: V2G × Exato,nor_s1,9000,32,32,0,-7552.48,0.0,0.0,-1.0,0.0
+pico final: LCVF × Exato,nor_s1,9000,32,32,0,-21.0,0.0,0.0,-1.0,2.2e-05
+pico final: V2G × LCVF,nor_s1,18000,32,32,0,-10970.78,0.0,0.0,-1.0,0.0
+energia líquida: V2G × LCVF,nor_s1,18000,32,32,0,-187.83709,0.0,0.0,-1.0,0.0
+EVs abaixo de 90%: V2G × LCVF,nor_s1,18000,32,0,32,0.458333,0.0,1e-06,1.0,4.5e-05
+pico final: V2G × Exato,nor_s1,18000,32,32,0,-11003.3,0.0,0.0,-1.0,0.0
+pico final: LCVF × Exato,nor_s1,18000,32,32,0,-17.54,0.0,0.0,-1.0,0.0
+pico final: V2G × LCVF,nor_s1,32330,32,32,0,-13665.76,0.0,0.0,-1.0,0.0
+energia líquida: V2G × LCVF,nor_s1,32330,32,32,0,-2047.54095,0.0,0.0,-1.0,0.0
+EVs abaixo de 90%: V2G × LCVF,nor_s1,32330,32,0,32,1.187751,0.0,0.0,1.0,0.0
+pico final: V2G × Exato,nor_s1,32330,32,32,0,-13685.2,0.0,0.0,-1.0,0.0
+pico final: LCVF × Exato,nor_s1,32330,32,31,1,-20.42,32.0,1.4e-05,-0.878788,0.00033

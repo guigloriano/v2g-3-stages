@@ -1,0 +1,12 @@
+{
+ "tecnica": "lcvf",
+ "instancia": "inst_32330_nor_s1_cgr_20230419_autumn_wed",
+ "status": "ok",
+ "wall_s": 25.04,
+ "maxrss_mb": 369.3,
+ "erro": "",
+ "inicio": "2026-10-08T20:46:13",
+ "jobs": 4,
+ "commit": "63125cb75+alterado",
+ "selecao": "selecao_dias.select_days()"
+}

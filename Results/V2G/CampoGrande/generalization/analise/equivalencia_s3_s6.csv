@@ -1,0 +1,7 @@
+redundante,original,tecnica,instancias,colunas_comparadas,max_dif_abs,colunas_com_diferenca
+bld_s3,bld_s2,gurobi,64,22,0.0,
+bld_s3,bld_s2,lcvf,160,22,0.0,
+bld_s3,bld_s2,v2g,160,22,0.0,
+bld_s6,bld_s1,gurobi,64,22,0.0,
+bld_s6,bld_s1,lcvf,160,22,0.0,
+bld_s6,bld_s1,v2g,160,22,0.0,

@@ -1,0 +1,12 @@
+{
+ "tecnica": "lcvf",
+ "instancia": "inst_18000_bld_s4_cgr_20221221_summer_wed",
+ "status": "ok",
+ "wall_s": 18.3,
+ "maxrss_mb": 372.2,
+ "erro": "",
+ "inicio": "2026-10-07T15:25:54",
+ "jobs": 4,
+ "commit": "c6722f2b+alterado",
+ "selecao": "selecao_dias.select_days()"
+}
