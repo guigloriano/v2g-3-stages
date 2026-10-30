@@ -2,11 +2,11 @@
  "tecnica": "v2g",
  "instancia": "inst_9000_nor_s1_cgr_20230523_autumn_tue",
  "status": "ok",
- "wall_s": 9.51,
- "maxrss_mb": 334.4,
+ "wall_s": 5.94,
+ "maxrss_mb": 300.9,
  "erro": "",
- "inicio": "2026-10-08T20:51:40",
+ "inicio": "2026-10-29T23:29:34",
  "jobs": 4,
- "commit": "63125cb75+alterado",
+ "commit": "336dbd80d+alterado",
  "selecao": "selecao_dias.select_days()"
 }

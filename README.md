@@ -28,11 +28,15 @@ root, so keep the structure unchanged.
 ```
 .
 ├── Codes/E_V2G/scripts/generalização_32dias/   # algorithms and experiment runners
-│   ├── v2g_stable.py, v2g_nivelado.py     # three-stage V2G (Stage 1 discharge; Stages 2–3 levelled recharge)
+│   ├── v2g_stable.py                      # three-stage V2G pipeline (data loading, Stage 1, output files)
+│   ├── v2g_nivelado_cap.py                # Stages 2–3 levelled recharge, battery capacity enforced in every slot
+│   ├── v2g_nivelado_cap_s1rec.py          # Stage 1 with recovery-aware eligibility (used by default)
+│   ├── v2g_nivelado.py                    # Stages 2–3 of v1.0.0 (capacity enforced at departure only)
 │   ├── lcvf_fast_v2g.py                   # LCVF baseline
 │   ├── multiobj_c.c                       # exact charging-only model (Gurobi C API)
 │   ├── selecao_dias.py                    # deterministic selection of the 32 load days
 │   ├── run_generalizacao.py               # runs the instance grid (V2G, LCVF, Gurobi)
+│   ├── medir_tempos_estagios.py           # per-stage V2G run times
 │   ├── run_gurobi_sequencial.py           # Gurobi one instance at a time, with memory/time logging
 │   ├── analise_generalizacao.py           # consolidates the results and runs the paired tests
 │   ├── solucao_npz.py                     # converts the Gurobi solution between .npz and .csv
@@ -127,7 +131,7 @@ the output of this step.
 
 | Technique | Main files |
 |---|---|
-| V2G | `summary_3stage.csv` (per-stage peak, energy and SoC counts), `en_profile_all_stages.csv` (load per slot after each stage), `results_s1_discharge.csv` (Stage 1 iterations), `results_s2_mincharge.csv`, `results_s3_fullcharge.csv` |
+| V2G | `summary_3stage.csv` (per-stage peak, energy and SoC counts), `en_profile_all_stages.csv` (load per slot after each stage), `results_s1_discharge.csv` (Stage 1 iterations), `results_s2_mincharge.csv`, `results_s3_fullcharge.csv`, `conferencia_capacidade.json` (check of the battery energy limits in every slot) |
 | LCVF | `en_profile_final.csv` (load per slot), plus the per-iteration table `<instance>.csv` in the fleet folder |
 | Exact | `en_profile_final.csv`, `summary.csv`, `gurobi.log.gz`, `recursos.csv` (memory every 1 s), `solucao_bits.npz` |
 
@@ -213,6 +217,23 @@ The selection is deterministic. Run `python3 selecao_dias.py` to list it.
 - **Lengthened windows:** sessions too short to serve their vehicle were lengthened during preprocessing (mostly in
   the Boulder fleets).
 - **Periodic day (N1):** Norway sessions that cross midnight wrap to the first slots of the same day (`wrap_end_ts`).
+
+## Versions
+
+- **v1.1.0** (2026-10-30): corrected V2G algorithm, used in the revised manuscript.
+  - Stages 2–3 now keep every vehicle's stored energy within $[0, B_i]$ in **every** time slot of its window, not
+    only at departure. Recharge placed before the vehicle's (last) discharge block is limited to the free capacity
+    at arrival, $Q_i = \lfloor (B_i - E_i^0)/(P_i^{max}\Delta t) \rfloor$ slots.
+  - Stage 1 only discharges a vehicle if its recovery to the 90 % SoC ceiling still fits in its window under that
+    limit (recovery-aware eligibility).
+  - Each V2G instance folder has a `conferencia_capacidade.json` with the check: no vehicle exceeds its capacity
+    in any slot, in any of the 768 instances.
+  - Updated: `v2g_nivelado/`, `analise/`, `execucoes.csv` (V2G rows), `tempos_estagios_v2g.csv`. Unchanged: input
+    data, LCVF and exact-model results.
+  - `analise/casos_v2g_perde/`, `analise/benchmark_exato/` and `analise/exato_3k_9k_antes_refazer.csv` described the
+    v1.0.0 V2G results and were removed.
+  - The v1.0.0 algorithm can still be run with `python3 run_generalizacao.py --tecnicas v2g --v2g original --saida <dir>`.
+- **v1.0.0**: first release.
 
 ## Citation
 

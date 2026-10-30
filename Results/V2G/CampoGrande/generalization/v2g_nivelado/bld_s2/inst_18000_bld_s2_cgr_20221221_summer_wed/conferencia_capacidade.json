@@ -1,0 +1,10 @@
+{
+ "n_evs": 18000,
+ "n_acima_cap": 0,
+ "excesso_max_kWh": 0.0,
+ "n_abaixo_min_na_descarga": 1,
+ "falta_min_max_kWh": 0.00144,
+ "n_negativo": 0,
+ "n_com_descarga": 8764,
+ "n_cota_esgotada": 3887
+}

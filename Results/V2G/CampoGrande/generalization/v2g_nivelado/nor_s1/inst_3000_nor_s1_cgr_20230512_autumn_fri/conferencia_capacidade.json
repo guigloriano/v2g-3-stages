@@ -1,0 +1,10 @@
+{
+ "n_evs": 3000,
+ "n_acima_cap": 0,
+ "excesso_max_kWh": 0.0,
+ "n_abaixo_min_na_descarga": 0,
+ "falta_min_max_kWh": 0.0,
+ "n_negativo": 0,
+ "n_com_descarga": 913,
+ "n_cota_esgotada": 90
+}

@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 """
-medir_tempos_estagios.py — tempo de cada estágio do V2G nivelado (Estágio 1, recarga conjunta S2+S3 e nivelamento),
+medir_tempos_estagios.py — tempo de cada estágio do V2G atual (Estágio 1, recarga conjunta S2+S3 e nivelamento),
 sem a geração de figuras, para o texto do relatório (§3, parâmetros, e §5.4, escala).
 
-Roda o mesmo executor da grade (run_generalizacao._run_v2g) com cronômetros em volta de vs.stage1,
-vn.stage_charging_floor_aware (busca binária da recarga) e vn.level_charging (nivelamento), e com SAVE_ITER_FIGS
+Roda o mesmo executor da grade (run_generalizacao._run_v2g, versão atual) com cronômetros em volta de
+vr.stage1_rec (Stage 1 consciente da recuperação), vc._floor_aware_cap (busca binária da recarga com a cota de
+capacidade) e vc._nivelar_cap (nivelamento com a cota), e com SAVE_ITER_FIGS
 desligado. As figuras finais de cada instância continuam sendo geradas, fora dos cronômetros, numa pasta temporária
 (os resultados da grade não são tocados). Uma instância por vez, num só processo.
 
@@ -25,7 +26,8 @@ sys.path.insert(0, str(SCRIPTS_DIR))
 import run_generalizacao as rg   # noqa: E402
 import selecao_dias              # noqa: E402
 import v2g_stable as vs          # noqa: E402
-import v2g_nivelado as vn        # noqa: E402
+import v2g_nivelado_cap as vc    # noqa: E402
+import v2g_nivelado_cap_s1rec as vr  # noqa: E402
 
 T = {}
 
@@ -49,9 +51,9 @@ def main():
     ap.add_argument("--saida", type=Path, default=rg.DEFAULT_OUT / "tempos_estagios_v2g.csv")
     args = ap.parse_args()
 
-    cronometrar(vs, "stage1", "s1_s")
-    cronometrar(vn, "stage_charging_floor_aware", "recarga_s")
-    cronometrar(vn, "level_charging", "nivelamento_s")
+    cronometrar(vr, "stage1_rec", "s1_s")              # _run_v2g faz vs.stage1 = vr.stage1_rec (já cronometrado)
+    cronometrar(vc, "_floor_aware_cap", "recarga_s")
+    cronometrar(vc, "_nivelar_cap", "nivelamento_s")
     run_v2g = rg._run_v2g
     main_orig = vs.main
 

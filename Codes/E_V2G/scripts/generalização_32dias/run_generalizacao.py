@@ -17,15 +17,22 @@ Nomes no texto do relatório (só na apresentação; os códigos da execução s
 B1 = bld_s1 (Boulder real), B2 = bld_s2 (flexible), B3 = bld_s4 (8-h shifts),
 B4 = bld_s5 (24-h); Norway = nor_s1.
 
+V2G (`--v2g`, padrão `atual`):
+  atual      versão do manuscrito desde 2026-10-29 (revisão interna R4/N20): recarga com a capacidade da bateria
+             respeitada em todos os slots (v2g_nivelado_cap.py) e Stage 1 que só descarrega um veículo se a
+             recuperação até 90% ainda couber na janela (v2g_nivelado_cap_s1rec.py). Grava em <saida>/v2g_nivelado/.
+  original   V2G nivelado anterior (v2g_nivelado.py): capacidade só na saída. Por padrão grava em
+             <saida>/_v2g_publicado_antes_correcao/v2g_nivelado/, onde estão os resultados dessa versão.
+
 Os executores são cópias congeladas nesta pasta (v2g_stable.py, v2g_nivelado.py,
-lcvf_fast_v2g.py e multiobj_c.c) e gravam no formato padrão deles (os mesmos CSVs e
+lcvf_fast_v2g.py e multiobj_c.c, mais os dois módulos da versão atual do V2G) e gravam no formato padrão deles (os mesmos CSVs e
 figuras .webp, aqui a 150 dpi, sem perdas). O runner só troca o arquivo
 de carga (um dia de all_days/), o diretório de saída e, nas etapas iterativas, grava
 apenas a figura da ÚLTIMA iteração:
 
-  V2G nivelado   CSVs padrão + Fig_01_perfil_inicial, Fig_02_v2g_estagios,
-                 Fig_03_soc_distribuicao e Fig_S1_iter15_discharge (só a última do S1;
-                 o S2+S3 nivelado não gera figura por iteração)
+  V2G            CSVs padrão + Fig_01_perfil_inicial, Fig_02_v2g_estagios,
+                 Fig_03_soc_distribuicao (+ conferencia_capacidade.json na versão atual;
+                 Fig_S1_iter15_discharge só na original)
   LCVF           CSVs padrão (en_profile_final.csv e <instância>.csv na pasta da frota) +
                  Fig_01/Fig_01b/Fig_02_EN_All_EVs, <instância>.webp e Fig_03_15_VF_exec
                  (só a última das 15 iterações)
@@ -43,6 +50,8 @@ Saída: Results/V2G/CampoGrande/generalization/{v2g_nivelado,lcvf_v2g,exact_guro
 
 Uso:
   python3 run_generalizacao.py --dry-run
+  python3 run_generalizacao.py --tecnicas v2g --refazer            # refaz o V2G atual nas 768 instâncias
+  python3 run_generalizacao.py --tecnicas v2g --v2g original       # V2G anterior (em _v2g_publicado_antes_correcao/)
   python3 run_generalizacao.py --tecnicas v2g lcvf --jobs 4
   python3 run_generalizacao.py --tecnicas gurobi --gurobi-jobs 2 --gurobi-threads 4
   python3 run_generalizacao.py --dias 20221003 --frotas bld_s1 --tamanhos 3000 --saida /tmp/teste   # teste
@@ -118,9 +127,33 @@ def _gzip_text(path, text):
         f.write(text)
 
 
-# ─── V2G nivelado ────────────────────────────────────────────────────────────
+# ─── V2G ─────────────────────────────────────────────────────────────────────
+
+V2G_ANTERIOR = DEFAULT_OUT / "_v2g_publicado_antes_correcao"   # resultados da versão original
+V2G_VERSAO = "atual"                                         # definido em main() (--v2g); lido pelo _worker
+
 
 def _run_v2g(pp_path, dia_path, out_dir):
+    """V2G atual (manuscrito): recarga com capacidade em todos os slots + Stage 1 consciente da recuperação."""
+    import v2g_stable as vs
+    import v2g_nivelado_cap as vc
+    import v2g_nivelado_cap_s1rec as vr
+
+    vs.INTERACTIVE_MENU   = False
+    vs.CITY_DIR_CHOICES   = [1]
+    vs.RUN_ALL_CITY_FILES = False
+    vs.PP_FILE_FILTER     = [pp_path.name]
+    vs.choose_city_file   = lambda city_path, choice, pattern="*.csv": dia_path
+    vs.build_results_path = lambda city, scen, inst: out_dir.parent / inst
+    vs.stage_charging_unified = vc.stage_charging_nivelado_cap
+    vs.stage1 = vr.stage1_rec
+    vs.SAVE_ITER_FIGS = False
+    vc.preparar(vs.load_preprocessed_fleet(pp_path))
+    vs.main()
+
+
+def _run_v2g_original(pp_path, dia_path, out_dir):
+    """V2G nivelado original (resultados em _v2g_publicado_antes_correcao/): capacidade só na saída."""
     import v2g_stable as vs
     import v2g_nivelado as vn
 
@@ -171,7 +204,8 @@ def _worker(task):
     buf = io.StringIO()
     try:
         with contextlib.redirect_stdout(buf):
-            (_run_v2g if tec == "v2g" else _run_lcvf)(pp_path, dia_path, out_dir)
+            v2g = _run_v2g if V2G_VERSAO == "atual" else _run_v2g_original
+            (v2g if tec == "v2g" else _run_lcvf)(pp_path, dia_path, out_dir)
         status, erro = "ok", ""
     except Exception:
         status, erro = "erro", traceback.format_exc()
@@ -293,10 +327,18 @@ def main():
     ap.add_argument("--dias", nargs="+", help="restringe a dias YYYYMMDD da seleção")
     ap.add_argument("--frotas", nargs="+", choices=sorted({**FROTAS, **FROTAS_REDUNDANTES}))
     ap.add_argument("--tamanhos", nargs="+", type=int)
-    ap.add_argument("--saida", type=Path, default=DEFAULT_OUT)
+    ap.add_argument("--v2g", choices=["atual", "original"], default="atual",
+                    help="versão do V2G (atual = manuscrito; original = anterior, grava em _v2g_publicado_antes_correcao/)")
+    ap.add_argument("--saida", type=Path, default=None, help="padrão: generalization/ (ou a pasta da versão original)")
     ap.add_argument("--refazer", action="store_true", help="ignora concluido.json")
     ap.add_argument("--dry-run", action="store_true")
     args = ap.parse_args()
+    global V2G_VERSAO
+    V2G_VERSAO = args.v2g
+    if args.v2g == "original" and set(args.tecnicas) != {"v2g"}:
+        ap.error("--v2g original só roda o V2G (use --tecnicas v2g); LCVF e Gurobi não dependem da versão")
+    if args.saida is None:
+        args.saida = V2G_ANTERIOR if args.v2g == "original" else DEFAULT_OUT
 
     out_root = args.saida.resolve()
     dias, tarefas = montar_tarefas(args, out_root)

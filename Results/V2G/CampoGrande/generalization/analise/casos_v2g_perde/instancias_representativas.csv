@@ -1,9 +1,0 @@
-celula,qual,dia,dP_pct,instancia,figura
-B1 39000,mediana,20230125,1.19,inst_39000_bld_s1_cgr_20230125_summer_wed,figs/perfil_B1_39000_mediana.png
-B1 39000,pior,20230113,3.69,inst_39000_bld_s1_cgr_20230113_summer_fri,figs/perfil_B1_39000_pior.png
-B1 50336,mediana,20230419,1.11,inst_50336_bld_s1_cgr_20230419_autumn_wed,figs/perfil_B1_50336_mediana.png
-B1 50336,pior,20230207,3.26,inst_50336_bld_s1_cgr_20230207_summer_tue,figs/perfil_B1_50336_pior.png
-B2 50336,mediana,20221003,0.12,inst_50336_bld_s2_cgr_20221003_spring_mon,figs/perfil_B2_50336_mediana.png
-B2 50336,pior,20220822,3.87,inst_50336_bld_s2_cgr_20220822_winter_mon,figs/perfil_B2_50336_pior.png
-B1 9000 (controle),mediana,20221221,-4.09,inst_9000_bld_s1_cgr_20221221_summer_wed,figs/perfil_B1_9000_mediana_controle.png
-N1 32330 (contraexemplo),mediana,20220728,-12.14,inst_32330_nor_s1_cgr_20220728_winter_thu,figs/perfil_N1_32330_mediana_contraexemplo.png

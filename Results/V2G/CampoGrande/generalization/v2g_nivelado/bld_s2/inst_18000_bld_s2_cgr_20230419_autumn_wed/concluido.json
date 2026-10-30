@@ -2,11 +2,11 @@
  "tecnica": "v2g",
  "instancia": "inst_18000_bld_s2_cgr_20230419_autumn_wed",
  "status": "ok",
- "wall_s": 8.14,
- "maxrss_mb": 339.7,
+ "wall_s": 7.74,
+ "maxrss_mb": 305.9,
  "erro": "",
- "inicio": "2026-10-04T14:41:54",
+ "inicio": "2026-10-29T23:24:54",
  "jobs": 4,
- "commit": "c6722f2b+alterado",
+ "commit": "336dbd80d+alterado",
  "selecao": "selecao_dias.select_days()"
 }

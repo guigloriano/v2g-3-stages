@@ -27,16 +27,31 @@ o modelo deriva a demanda da bateria e do SoC, então as entradas e os resultado
 
 ## Pastas
 
+**Desde 2026-10-30** `v2g_nivelado/` tem o V2G **atual** do manuscrito (revisão interna R4/N20: capacidade da bateria
+respeitada em todos os slots e Stage 1 consciente da recuperação; `v2g_nivelado_cap.py` + `v2g_nivelado_cap_s1rec.py`).
+O V2G anterior (capacidade só na saída) e a análise correspondente estão na versão v1.0.0 deste pacote.
+No pacote só entram `v2g_nivelado/`, `lcvf_v2g/`, `exact_gurobi/`, `analise/` e os CSVs de execução; as pastas
+iniciadas por `_` ficaram no repositório do projeto.
+
 | Pasta                    | Conteúdo                                                                      |
 |--------------------------|-------------------------------------------------------------------------------|
-| `v2g_nivelado/<código>/` | V2G (S1 + S2/S3 nivelado), uma pasta por instância                            |
+| `v2g_nivelado/<código>/` | V2G atual, uma pasta por instância (com `conferencia_capacidade.json`)        |
 | `lcvf_v2g/<código>/`     | LCVF direto (baseline)                                                        |
 | `exact_gurobi/<código>/` | ótimo exato só de carga (todos os tamanhos, em sequência, com `recursos.csv`, `gurobi.log.gz` e `solucao_bits.npz`) |
-| `analise/`               | CSVs consolidados, testes e figuras de comparação (`analise_generalizacao.py`) |
-| `analise/casos_v2g_perde/`, `analise/benchmark_exato/` | material das docs 14 e 15                  |
+| `analise/`               | CSVs consolidados, testes e figuras de comparação (`analise_generalizacao.py`), com o V2G atual |
+| `tempos_estagios_v2g.csv`| tempos por estágio do V2G atual (`medir_tempos_estagios.py`)                  |
 | `_redundantes_s3_s6/`    | resultados de `bld_s3`/`bld_s6` (idênticos a `bld_s2`/`bld_s1`)                |
 | `_n1_horizonte_cortado/` | N1 antes do dia periódico (fora do git; docs/13, Seção 7e)                    |
-| `_sens_madrugada_n1/`    | execuções do teste de sensibilidade da madrugada (fora do git)                |
+| `_sens_madrugada_n1/`    | execuções do teste de sensibilidade da madrugada (V2G atual e LCVF; fora do git) |
+
+`execucoes.csv` registra LCVF e Gurobi (da grade original) e o V2G atual.
+
+Execução padronizada (a partir de `Codes/E_V2G/scripts/generalização_32dias/`):
+```bash
+python3 run_generalizacao.py --tecnicas v2g lcvf gurobi      # V2G atual por padrão (--v2g original: versão v1.0.0)
+python3 analise_generalizacao.py --perfis nenhuma
+python3 sensibilidade_madrugada_n1.py && python3 medir_tempos_estagios.py
+```
 
 Grade de instâncias distintas: 768 por técnica (V2G, LCVF e Exato; 32 dias × 24 frotas/tamanhos). Registro das
 execuções do Gurobi: `execucoes_gurobi_sequencial.csv`.
